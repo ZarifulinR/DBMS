@@ -22,11 +22,47 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="SQLQuery CREATE DATABASE.sql">
+        <FileNode Name="SQLQuery1 CREATE DATABASE.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery CREATE DATABASE.sql</FullPath>
+          <FullPath>SQLQuery1 CREATE DATABASE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2 CREATE TABLE Directions.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 CREATE TABLE Directions.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2 CREATE TABLE GROUPS.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 CREATE TABLE GROUPS.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2 CREATE TABLE Students .sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 CREATE TABLE Students .sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2 CREATE TABLE Teachers.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 CREATE TABLE Teachers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery3 CREATE TABLE Disciplins.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery3 CREATE TABLE Disciplins.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery4 CREATE TABLE Sche.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery4 CREATE TABLE Sche.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
