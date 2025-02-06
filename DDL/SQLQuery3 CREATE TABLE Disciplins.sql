@@ -33,11 +33,12 @@ USE PV_319_DDL
 --		--disciplines -им€ пол€ которое €вл€етс€ внешним ключем
 --		--2_Disciplines - показывает, на какую таблицу ссылаетс€ внешний ключ
 --);
-CREATE TABLE CompleteDisciplines
-(
-	discipline		SMALLINT,
-	[group]			INT,
-	PRIMARY KEY (discipline,[group]),
-	constraint FK_CompleteDisciplines_Disciplines	 FOREIGN KEY (discipline)	REFERENCes Disciplines(disciplin_id),
-	CONSTRAINT FK_CompleteDisciplines_Groups		 FOREIGN KEY ([group])      REFERENCES Groups(group_id)
-);
+--CREATE TABLE CompleteDisciplines
+--(
+--	discipline		SMALLINT,
+--	[group]			INT,
+--	PRIMARY KEY (discipline,[group]),
+--	constraint FK_CompleteDisciplines_Disciplines	 FOREIGN KEY (discipline)	REFERENCes Disciplines(disciplin_id),
+--	CONSTRAINT FK_CompleteDisciplines_Groups		 FOREIGN KEY ([group])      REFERENCES Groups(group_id)
+--);
+
