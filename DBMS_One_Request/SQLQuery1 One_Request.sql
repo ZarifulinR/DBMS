@@ -152,19 +152,15 @@ IF OBJECT_ID ('Schedule','U') IS NULL
 			);
 END
 GO
-	IF OBJECT_ID ('Grades','u') IS NULL
-	BEGIN 
+IF OBJECT_ID ('Grades','u') IS NULL
+BEGIN 
 	CREATE TABLE Grades
 		(
-	student			 INT			
-						CONSTRAINT FK_Grades_Student FOREIGN KEY REFERENCES Students(student_id),
-	lesson			BIGINT		
-						CONSTRAINT FK_Grades_Schedule FOREIGN KEY REFERENCES Schedule(lesson_id),
-	present			BIT				NULL,
-	grade_1			TINYINT			NULL
-						CONSTRAINT CK_Graid_1 CHECK (grade_1>0 AND grade_1<=12),
-	grade_2			TINYINT			NULL
-	CONSTRAINT CK_Graid_2 CHECK (grade_2>0 AND grade_2<=12)
+	student	INT						CONSTRAINT FK_Grades_Student FOREIGN KEY REFERENCES Students(student_id),
+	lesson	BIGINT					CONSTRAINT FK_Grades_Schedule FOREIGN KEY REFERENCES Schedule(lesson_id),
+	present	BIT				NULL,
+	grade_1	TINYINT			NULL	CONSTRAINT CK_Graid_1 CHECK (grade_1>0 AND grade_1<=12),
+	grade_2	TINYINT			NULL	CONSTRAINT CK_Graid_2 CHECK (grade_2>0 AND grade_2<=12)
 );
 END
 GO
