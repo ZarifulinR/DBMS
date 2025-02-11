@@ -6,7 +6,7 @@ SELECT
 FROM Students,Groups
 WHERE [group] =group_id
 GROUP BY group_name
-ORDER BY N'Колличество сегдентов'
+ORDER BY N'Колличество студентов'
 GO
 
 	
