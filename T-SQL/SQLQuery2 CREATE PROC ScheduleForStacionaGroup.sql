@@ -1,14 +1,20 @@
 USE PV_319_Import;
 GO
-
-DECLARE @group				 AS INT			=		(SELECT group_id FROM Groups WHERE group_name= N'PV_319')
-DECLARE @discipline			 AS SMALLINT	=		(SELECT discipline_id FROM Disciplines  WHERE  discipline_name LIKE N'Объектно-ориент%');
-DECLARE @teacher			 AS SMALLINT	=		(SELECT teacher_id FROM Teachers WHERE first_name = N'Олег');
-DECLARE @start_date			 AS DATE		=		N'2024-06-01';
-DECLARE @date				 AS DATE		=		@start_date;
-DECLARE @number_of_lesson	 AS TINYINT		=		(SELECT number_of_lessons FROM Disciplines WHERE discipline_id =@discipline);
-DECLARE @lesson				 AS TINYINT		=		1;
-DECLARE @time                AS TIME(0)		=		N'18:30';
+CREATE PROCEDURE dbo.sp_ScheduleForGroup
+			@group_nsme   NVARCHAR(16),
+			@disciplin_name NVARCHAR(150),
+			@teacher_last_name NVARCHAR(50),
+			@start_date DATE,
+			@time TIME(0)
+AS 
+BEGIN
+		SET DATEFIRST 1
+		DECLARE @group				 AS INT			=		(SELECT group_id FROM Groups WHERE group_name= @group_nsme)
+		DECLARE @discipline			 AS SMALLINT	=		(SELECT discipline_id FROM Disciplines  WHERE  discipline_name LIKE @disciplin_name);
+		DECLARE @teacher			 AS SMALLINT	=		(SELECT teacher_id FROM Teachers WHERE last_name =@teacher_last_name);
+		DECLARE @date				 AS DATE		=		@start_date;
+		DECLARE @number_of_lesson	 AS TINYINT		=		(SELECT number_of_lessons FROM Disciplines WHERE discipline_id =@discipline);
+		DECLARE @lesson				 AS TINYINT		=		1;
 
 
 PRINT (@number_of_lesson);
@@ -48,4 +54,5 @@ VALUES (@group,@discipline,@teacher,@date,@time,IIF(@date < GETDATE(),1,0));
 				SET @date =DATEADD(DAY,2,@date);
 		END
 END
-SELECT * FROM Schedule
+
+END
