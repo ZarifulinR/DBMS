@@ -1,6 +1,7 @@
 USE PV_319_Import;
 GO
-ALTER PROCEDURE dbo.sp_ScheduleForGroup
+
+ALTER PROCEDURE dbo.sp_ScheduleForGroup21_12
 			@group_name NVARCHAR(16)  ,
 			@disciplin_name NVARCHAR(150),
 			@disciplin_name2 NVARCHAR(150),
@@ -77,3 +78,19 @@ VALUES (@group,@discipline,@teacher,@date,@time,IIF(@date < GETDATE(),1,0));
 END
 
 END
+			@group_name NVARCHAR(16)  ,
+			@disciplin_name NVARCHAR(150),
+			@teacher_last_name NVARCHAR(50),
+			@start_date DATE,
+			@time TIME(0)
+AS
+BEGIN
+		SET DATEFIRST 1
+		DECLARE @group				 AS INT			=		(SELECT group_id FROM Groups WHERE group_name= @group_name)
+		DECLARE @discipline			 AS SMALLINT	=		(SELECT discipline_id FROM Disciplines  WHERE  discipline_name LIKE @disciplin_name);
+		DECLARE @teacher			 AS SMALLINT	=		(SELECT teacher_id FROM Teachers WHERE last_name =@teacher_last_name);
+		DECLARE @date				 AS DATE		=		@start_date;
+		DECLARE @number_of_lesson	 AS TINYINT		=		(SELECT number_of_lessons FROM Disciplines WHERE discipline_id =@discipline);
+		DECLARE @lesson				AS TINYINT		=		1;
+END
+PRINT (@g
