@@ -11,3 +11,4 @@ GO
 --EXEC @salary = sp_CountTeachersMonthSalary N'Покидюк',2024,06
 ----EXEC @salary = sp_CountTeachersMonthSalary N'Покидюк',2024,06
 --PRINT (@salary)
+--EXEC sp_ScheduleForGroup21_12 N'PD_321', N'%MS SQL Server%',N'%Системное программирование%', N'Покидюк', N'2024-06-10', N'13:30';

@@ -36,7 +36,7 @@ WHILE (@lesson <= @number_of_lesson)
              SET @discipline = @discipline;
 			 SET @discipline = @discipline2
         END
-        ELSE  -- Чётная неделя (2 Математика, 1 Физика)
+        ELSE  
         BEGIN
             SET @discipline = @discipline2;
             SET @discipline = @discipline2;
