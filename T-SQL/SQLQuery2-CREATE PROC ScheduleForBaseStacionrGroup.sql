@@ -35,13 +35,14 @@ BEGIN
 
 			IF(DATEPART(WEEKDAY,@date)=@alternating_day)
 			BEGIN
-				SET @date =DATEADD(WEEK,2,@date)
+				SET @date =DATEADD(DAY,2,@date)
 			END
-			IF(DATEPART(WEEKDAY,@date)=4)
+			ELSE IF(DATEPART(WEEKDAY,@date)=4)
 			BEGIN
-				SET @date =IIF(@current_week_present=1,DATEADD(WEEk,1,@date),DATEADD(DAY,5,@date))
+				SET @date =IIF(@current_week_present=1,DATEADD(DAY,7,@date),DATEADD(DAY,5,@date))
+				SET @current_week_present = IIF(@current_week_present=1,0,1)
+			
 			END
-			SET @current_week_present = IIF(@current_week_present=1,0,1)
 			PRINT('=======================================')
 		END	
 END

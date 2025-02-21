@@ -64,6 +64,12 @@
           <AssociatedConnUserName />
           <FullPath>SQLQuery2-Create Proc Print ScheduleForGroup Period.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery2-CREATE PROC ScheduleForBaseStacionrGroup.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2-CREATE PROC ScheduleForBaseStacionrGroup.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery2-Create Proc TeacherMonthsalary.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
