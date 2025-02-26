@@ -7,9 +7,10 @@ ALTER PROCEDURE sp_ScheduleForBaseStacionarGroup
 			@tacher_last_name			 NVARCHAR(50),
 			@start_date					 DATE,
 			@time						TIME(0),
-			@lerning_1					TINYINT,
-			@lerning_2					TINYINT,
-			@lerning_3					TINYINT,
+			--@lerning_1					TINYINT,
+			--@lerning_2					TINYINT,
+			--@lerning_3					TINYINT,
+			@resident_day					TINYINT,
 			@alternating_day			 TINYINT,
 			@first_week_present			 BIT
 AS
@@ -21,25 +22,46 @@ BEGIN
 		DECLARE @current_week_present	AS	            BIT         =	 @first_week_present
 		DECLARE @number_of_lesson		AS		        TINYINT		=	 (SELECT number_of_lessons FROM Disciplines WHERE discipline_id = @discipline)
 		DECLARE @lesson_number			AS				TINYINT		=	 0
-
-		WHILE(@lesson_number< @number_of_lesson)
+		DECLARE @rr_interval			AS				TINYINT		=	 7;
+		DECLARE @ar_interval		    AS				TINYINT		=	IIF(@alternating_day>@resident_day,@alternating_day-@resident_day,@resident_day-@alternating_day)
+		DECLARE @ra_interval			AS				TINYINT		=	@rr_interval - @ar_interval
+	
+	WHILE(@lesson_number< @number_of_lesson)
 		BEGIN 
+		 IF EXISTS (SELECT 1 FROM Holidays WHERE holiday_date = @date)
+        BEGIN
+            PRINT '«ан€тие на ' + CAST(@date AS NVARCHAR) + ' пропускаетс€, т.к. это праздничный день';
+            SET @date = DATEADD(DAY, 1, @date);  
+            CONTINUE;
+        END
 			PRINT(@date)
 			PRINT(DATENAME(WEEKDAY,@date))
+			if NOT EXISTS (SELECT lesson_id FROM Schedule Where [group]=@group AND discipline=@discipline AND [date]=@date AND [time]=@time)
+			 BEGIN
+			  INSERT Schedule
+							([group],discipline,teacher,[date],[time],spent)
+							VALUES (@group, @discipline, @teacher, @date, @time,IIF(@date<GETDATE(),1,0))
+				END			
 			PRINT(@lesson_number+1)
 			PRINT(@time)
 			SET @lesson_number = @lesson_number+1
 			PRINT(@lesson_number+1)
 			PRINT(DATEADD(MINUTE,95,@time))
+			if NOT EXISTS (SELECT lesson_id FROM Schedule Where [group]=@group AND discipline=@discipline AND [date]=@date AND [time]=DATEADD(MINUTE, 95,@time))
+			 BEGIN
+			  INSERT Schedule
+							([group],discipline,teacher,[date],[time],spent)
+							VALUES (@group, @discipline, @teacher, @date, DATEADD(MINUTE, 95,@time), IIF(@date<GETDATE(),1,0))
+				END			
+			SET @lesson_number = @lesson_number+1
 			PRINT('---------------------------------')
-
 			IF(DATEPART(WEEKDAY,@date)=@alternating_day)
 			BEGIN
-				SET @date =DATEADD(DAY,2,@date)
+				SET @date =DATEADD(DAY,@ar_interval,@date)
 			END
-			ELSE IF(DATEPART(WEEKDAY,@date)=4)
+			ELSE IF(DATEPART(WEEKDAY,@date)=@resident_day)
 			BEGIN
-				SET @date =IIF(@current_week_present=1,DATEADD(DAY,7,@date),DATEADD(DAY,5,@date))
+				SET @date =IIF(@current_week_present=1,DATEADD(DAY,@rr_interval,@date),DATEADD(DAY,@ra_interval,@date))
 				SET @current_week_present = IIF(@current_week_present=1,0,1)
 			
 			END

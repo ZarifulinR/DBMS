@@ -58,6 +58,12 @@
           <AssociatedConnUserName />
           <FullPath>SQLQuery1 UPDATE.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery1INSERT HOLIDAYS.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1INSERT HOLIDAYS.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery2-Count Disciplines for Teacher.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>

@@ -11,7 +11,7 @@ BEGIN
 		SELECT 
 		[Группа] = group_name,
 		[Дисциплина]= discipline_name,
-		[Преподаватель]= FORMATMESSAGE(N'%s &s %s', last_name,first_name,middle_name),
+		[Преподаватель]= FORMATMESSAGE(N'%s %s %s', last_name,first_name,middle_name),
 		[День]		= DATENAME(WEEKDAY,[date]),
 		[Дата]	=	[date],
 		[Время] =   [time],
