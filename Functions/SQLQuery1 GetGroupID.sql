@@ -1,0 +1,11 @@
+USE PV_319_Import;
+SET DATEFIRST 1
+GO
+CREATE FUNCTION GetGroupID
+(
+	@group_name AS NVARCHAR(150)
+)
+RETURNS INT
+BEGIN
+RETURN (SELECT group_id FROM Groups WHERE group_name=@group_name)
+END

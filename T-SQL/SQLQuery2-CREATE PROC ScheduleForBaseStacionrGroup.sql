@@ -28,7 +28,7 @@ BEGIN
 	
 	WHILE(@lesson_number< @number_of_lesson)
 		BEGIN 
-		 IF EXISTS (SELECT 1 FROM Holidays WHERE holiday_date = @date)
+		 IF EXISTS (SELECT holiday_id FROM Holidays WHERE holiday_date = @date)
         BEGIN
             PRINT '«ан€тие на ' + CAST(@date AS NVARCHAR) + ' пропускаетс€, т.к. это праздничный день';
             SET @date = DATEADD(DAY, 1, @date);  
