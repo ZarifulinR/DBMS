@@ -5,3 +5,5 @@ GO
 PRINT (dbo.GetGroupID(N'PV_319'))
 PRINT (dbo.GetDisciplineID(N'Теория баз данных, программирование MS SQL Server%'))
 PRINT (dbo.CountSpentLessons(N'PV_319',N'Процедурное программирование%'))
+PRINT (dbo.GetNewYearHolidaysStartDate(2024))
+PRINT (dbo.GetSummerHolidaysStart(2024))
