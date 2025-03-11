@@ -7,7 +7,8 @@ BEGIN
 	DECLARE @start_date AS DATE =
 	CASE 
 	WHEN @holiday LIKE N'Нов%' THEN  dbo.GetNewYearHolidaysStartDate(@year) 
-	wHeN @holiday LIke N'Лет%'	THEN  dbo.GetSummerHolidaysStart(@year) 
+	wHeN @holiday LIke N'Лет%'	THEN  dbo.GetSummerHolidaysStart(@year)
+	WHEN @holiday LIKE N'Па%' THEN dbo.GetEasterDate(@year)
 	WHEN @month!=0 AND @day!=0 THEN DATEFROMPARTS(@year,@month,@day)
 	END
 	--SET @start_date = DATEFROMPARTS()

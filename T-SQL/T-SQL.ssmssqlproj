@@ -22,6 +22,12 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
+        <FileNode Name="SQLQuery0 Holidays test.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery0 Holidays test.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery1 Insert PV_319.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
@@ -81,6 +87,12 @@
           <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>SQLQuery7 CREATE PROCEDURE New Year.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery7 CREATE PROCEDURE sp_AddAllHolidaysFor.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-SSAKK7M\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery7 CREATE PROCEDURE sp_AddAllHolidaysFor.sql</FullPath>
         </FileNode>
         <FileNode Name="SQLQuery7 CreateProcedure AddHolidays.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-SSAKK7M\SQLEXPRESS:True</AssociatedConnectionMoniker>

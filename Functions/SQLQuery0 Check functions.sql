@@ -8,4 +8,5 @@ GO
 ----PRINT (dbo.GetNewYearHolidaysStartDate(2024))
 ----PRINT (dbo.GetSummerHolidaysStart(2024))
 --PRINT (dbo.GetHolidaysDuration(N'Нов%'))
-PRINT (dbo.GetHolidayStartDate(N'8%',2025))
+PRINT (dbo.GetHolidayStartDate(N'Пас%',2002))
+PRINT (dbo.GetEasterDate(2025))
