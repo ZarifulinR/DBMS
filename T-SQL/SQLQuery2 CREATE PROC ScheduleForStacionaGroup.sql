@@ -28,6 +28,8 @@ WHILE (@lesson <= @number_of_lesson)
 		PRINT (DATENAME(WEEKDAY,@date));
 		PRINT(@lesson);
 		Print(@time);
+		IF NOT EXISTS(SELECT[date]FROM DaysOFF WHERE [date]=@date)
+		BEGIN
 		SET @week_number = DATEPART(WEEK, @date) % 2
 
 		IF @week_number = 1  
@@ -65,6 +67,7 @@ VALUES (@group,@discipline,@teacher,@date,@time,IIF(@date < GETDATE(),1,0));
 		END
 
 		SET @lesson =@lesson+1;
+		END
 		PRINT('--------------');
 		if(DATEPART(WEEKDAY,  @date)=6)
 		BEGIN

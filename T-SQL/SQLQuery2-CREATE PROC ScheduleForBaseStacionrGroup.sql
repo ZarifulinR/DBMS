@@ -28,12 +28,8 @@ BEGIN
 	
 	WHILE(@lesson_number< @number_of_lesson)
 		BEGIN 
-		 IF EXISTS (SELECT holiday_id FROM Holidays WHERE holiday_date = @date)
-        BEGIN
-            PRINT '«ан€тие на ' + CAST(@date AS NVARCHAR) + ' пропускаетс€, т.к. это праздничный день';
-            SET @date = DATEADD(DAY, 1, @date);  
-            CONTINUE;
-        END
+		IF (NOT EXISTS(SELECT [date]FROM DaysOFF WHERE [date]=@date))
+			BEGIN
 			PRINT(@date)
 			PRINT(DATENAME(WEEKDAY,@date))
 			if NOT EXISTS (SELECT lesson_id FROM Schedule Where [group]=@group AND discipline=@discipline AND [date]=@date AND [time]=@time)
@@ -54,6 +50,11 @@ BEGIN
 							VALUES (@group, @discipline, @teacher, @date, DATEADD(MINUTE, 95,@time), IIF(@date<GETDATE(),1,0))
 				END			
 			SET @lesson_number = @lesson_number+1
+			END
+			ELSE 
+			BEGIN 
+			PRINT('+++++++++++++++++++++++++++++')
+			END
 			PRINT('---------------------------------')
 			IF(DATEPART(WEEKDAY,@date)=@alternating_day)
 			BEGIN

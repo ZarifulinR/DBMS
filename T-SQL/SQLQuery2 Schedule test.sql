@@ -14,6 +14,9 @@ GO
 --PRINT (@salary)
 --EXEC sp_ScheduleForGroup21_12 N'PD_321', N'%MS SQL Server%',N'%Системное программирование%', N'Покидюк', N'2024-06-10', N'13:30';
 --DROP PROC sp_ScheduleForBaseStacionarGroup
+--DELETE FROM Schedule
 --EXEC sp_ScheduleForBaseStacionarGroup N'PV_319', N'%Процедурное программирование%', N'Ковтун', N'2023-11-23','18:30',4,2,1
---EXEC sp_ScheduleForBaseStacionarGroup N'PV_319', N'%Процедурное%', N'%Ковтун%', N'2023-11-23','18:30',4,2,1
+--EXEC sp_ScheduleForBaseStacionarGroup N'PV_319', N'%Hardware%', N'Кобылинский', N'2023-11-25','18:30',6,2,0
 --drop table Holidays
+EXEC sp_ScheduleForGroup N'PV_319',N'%UML%',N'Ковтун',N'2024-06-01',N'18:30'
+EXEC sp_PrintScheduleForGroup N'PV_319';

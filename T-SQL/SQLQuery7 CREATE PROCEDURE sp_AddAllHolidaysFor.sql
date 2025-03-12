@@ -8,6 +8,7 @@ BEGIN
 	EXEC sp_AddHolidays @year, N'23%';
 	EXEC sp_AddHolidays @year,N'8%';
 	EXEC sp_AddHolidays @year, N'Пас%';
+	EXEC sp_AddHolidays @year, N'Май%';
 	EXEC sp_AddHolidays @year, N'Лет%';
 	EXEC sp_AddHolidays @year, N'Де%';
 END
